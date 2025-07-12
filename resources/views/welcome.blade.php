@@ -11,11 +11,12 @@
 
 
 
-<nav class="bg-sky-500 border border-b-double  ">
+<nav class="bg-sky-500 border border-b-double shadow-lg ">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
-    <p class="font-monospace text-white text-xl cursor-pointer m-2 font-bold">
-        planing web
+    <p class="font-monospace text-white text-xl cursor-pointer m-2 font-bold ">
+       Todolist<span class="text-sm text-red-400 text-xl">Web</span>
+
     </p>
 
     <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
@@ -42,9 +43,51 @@
 </nav>
 
 
+<div class="text-center mt-20 mb-0 px-4 mx-10">
+  <div class="grid grid-cols-2 gap-8 items-center">
+
+    <!-- Kiri: Deskripsi -->
+    <div class="text-left">
+      <h2 class="text-3xl font-bold mb-4 text-gray-800">Produktivitas Harian Anda, Lebih Terorganisir</h2>
+      <p class="text-lg text-gray-600">
+        Aplikasi <strong>To-Do List</strong> dan <strong>Perencana Harian</strong> ini membantu Anda mengatur tugas, menjadwalkan aktivitas, dan mencapai target harian dengan mudah dan efisien.
+      </p>
+    </div>
 
 
-<footer class="bg-sky-500 shadow-sm m-4 mt-100 p-5 mx-auto m-auto">
+    <!-- CTA Section -->
+<div class="flex flex-col items-center text-center space-y-5 max-w-md mx-auto
+ p-6 bg-white rounded-xl ">
+
+  <h3 class="text-2xl font-semibold text-gray-800">
+    Tingkatkan Produktivitas Anda
+  </h3>
+
+  <p class="text-gray-600 text-sm leading-relaxed">
+    Rencanakan, kelola, dan selesaikan tugas harian Anda dengan lebih terstruktur.
+    Sederhana. Cepat. Efisien.
+  </p>
+
+  <button class="bg-blue-600 text-white text-base font-medium py-3 px-6 rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition duration-300">
+    Mulai Sekarang
+  </button>
+
+  <p class="text-xs text-gray-400">
+    Tidak perlu akun. Langsung gunakan.
+  </p>
+
+</div>
+
+
+
+</div>
+
+
+  </div>
+</div>
+
+
+<footer class="bg-sky-500 shadow-sm m-4 mt-50 p-5 mx-auto m-auto">
 
 
     <div class="w-full mx-auto max-w-screen-xl p-4
