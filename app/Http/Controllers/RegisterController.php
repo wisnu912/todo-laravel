@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -13,13 +14,17 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
+
+        //validation
            $request->validate([
              'username' => ['required' , 'max:22' , 'string'],
              'email' => ['required' , 'email' , 'string'],
              'password' => ['required','confirmed','min:8'],
              'password_confirmation' => ['required'],
 
-           ] , [
+           ]
+           // custom erorr validation
+           , [
              'username.required' => 'username wajib di isi',
              'username.max' => 'username maximal 22 karakter',
              'email.required' => 'email wajib di isi',
@@ -31,7 +36,15 @@ class RegisterController extends Controller
            ]);
 
 
-           dd($request->all());
+           $user = User::create([
+              'username' => $request->username,
+              'email' => $request->email,
+              'password' => $request->has($request->password),
+           ]);
+
+           $user->save();
+
+           return "data is created";
 
 
 

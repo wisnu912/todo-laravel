@@ -32,6 +32,7 @@
               type="text"
               name="username"
               id="username"
+              value="{{ old('username') }}"
               class="@error('username') is-invalid @enderror w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm md:text-base"
             />
             @error('username')
@@ -46,7 +47,7 @@
               type="text"
               name="email"
               id="email"
-
+               value="{{ old('email') }}"
               class="@error('email') is-invalid @enderror w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm md:text-base"
             />
             @error('email')
@@ -61,7 +62,7 @@
               type="password"
               name="password"
               id="password"
-
+                value="{{ old('password') }}"
               class="@error('password') is-invalid @enderror w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm md:text-base"
             />
             @error('password')
@@ -76,7 +77,7 @@
               type="password"
               name="password_confirmation"
               id="password_confirmation"
-
+                value="{{ old('password_confirmation') }}"
               class="@error('password_confirmation') is-invalid @enderror w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm md:text-base"
             />
           </div>
