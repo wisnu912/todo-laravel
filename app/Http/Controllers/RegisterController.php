@@ -35,18 +35,14 @@ class RegisterController extends Controller
              'password_confirmation' => 'confrim passsword wajib di isi'
            ]);
 
-
            $user = User::create([
               'username' => $request->username,
               'email' => $request->email,
               'password' => $request->has($request->password),
            ]);
-
            $user->save();
 
          return redirect()->route('login-page');
-
-
 
     }
 }
