@@ -16,7 +16,8 @@ class RegisterController extends Controller
            $request->validate([
              'username' => ['required' , 'max:22' , 'string'],
              'email' => ['required' , 'email' , 'string'],
-             'password' => ['required' , 'min:8'],
+             'password' => ['required','confirmed','min:8'],
+             'password_confirmation' => ['required'],
 
            ] , [
              'username.required' => 'username wajib di isi',
@@ -24,7 +25,9 @@ class RegisterController extends Controller
              'email.required' => 'email wajib di isi',
              'email.email' =>  'email harus @example.gmail.com',
              'password.required' => 'password wajib di isi',
-             'password.min' => 'password minimal 8 karakter'
+             'password.min' => 'password minimal 8 karakter',
+             'password.confirmed' => 'confrim password tidak sesuai',
+             'password_confirmation' => 'confrim passsword wajib di isi'
            ]);
 
 
