@@ -21,27 +21,37 @@
             <button class="border border-gray-300 rounded-xl bg-white text-gray-800 py-2 hover:bg-gray-100 text-sm md:text-base">Apple</button>
             </div>
 
-        <form action="" method="POST" class="space-y-5">
+        <form action="{{ route('regis.proses') }}" method="POST" class="space-y-5">
+            @csrf
           <div>
-            <label class="block mb-1 text-sm font-medium text-gray-700" for="name">Nama Lengkap</label>
+            <label class="block mb-1 text-sm font-medium text-gray-700"
+            for="username">Nama Lengkap</label>
             <input
               type="text"
-              name="name"
+              name="username"
               id="name"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm md:text-base"
-              required
+              class="@error('title')
+              is-invalid @enderror w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm md:text-base"
+
             />
+
+            @error('username')
+            <div class="text-red-600">{{ $message }}</div>
+          @enderror
           </div>
 
           <div>
             <label class="block mb-1 text-sm font-medium text-gray-700" for="email">Email</label>
             <input
-              type="email"
+              type="text"
               name="email"
               id="email"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm md:text-base"
-              required
+              class=" @error('email') is-invalid @enderror w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm md:text-base"
+
             />
+               @error('email')
+            <div class="bg text-red-600">{{ $message }}</div>
+            @enderror
           </div>
 
           <div>
@@ -50,21 +60,25 @@
               type="password"
               name="password"
               id="password"
-              class="w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm md:text-base"
-              required
-            />
-          </div>
+              class=" @error('password') is-invalid @enderror w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm md:text-base"
 
-          <div>
+            />
+
+               @error('password')
+                <div class="text-red-600">{{ $message }}</div>
+                @enderror
+                </div>
+
+          {{-- <div>
             <label class="block mb-1 text-sm font-medium text-gray-700" for="password_confirmation">Konfirmasi Password</label>
             <input
               type="password"
               name="password_confirmation"
               id="password_confirmation"
               class="w-full border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm md:text-base"
-              required
+
             />
-          </div>
+          </div> --}}
 
           <button
             type="submit"

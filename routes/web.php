@@ -12,3 +12,4 @@ Route::get('/', function () {
 route::get('login' , [LoginController::class  , 'index'] )->name('login-page');
 //register
 route::get('register' , [RegisterController::class , 'index'])->name('register-page');
+route::post('register'   , [RegisterController::class , 'store'])->name('regis.proses');
