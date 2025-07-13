@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -13,21 +14,25 @@ class LoginController extends Controller
     }
 
 
-    public function login(Request $request)
-    {
+  public function login(Request $request)
+{
+    //ambil nilai dari input
+    $credentials = $request->only('email', 'password');
+    
 
-        $request->validate([
-            'email' => ['required' ,'email'],
-            'password' => ['required']
-        ], [
-            'email.required' => 'email wajib di isi',
-            'email.email' => 'email harus example@gmail.com',
-            'password' => 'password wajib di isi'
-        ]);
+    //check apakah credentials ada
+    if (Auth::attempt($credentials)) {
+        $request->session()->regenerate();
 
-
-     dd($request->all());
-
+        return redirect()->intended('/');
     }
 
+    //return erorr jika emali dan password tidak sesuai
+    return back()->withErrors([
+        'email' => 'Email atau password salah.',
+    ])->withInput(); 
 }
+
+
+}
+    

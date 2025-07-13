@@ -29,7 +29,7 @@
     <div>
       <label class="block mb-1 text-sm font-medium text-gray-700 text-left" for="email">Email</label>
       <input
-        type="email"
+        type="text"
         name="email"
         id="email"
         value="{{ old('email') }}"
