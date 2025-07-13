@@ -29,7 +29,7 @@
 
         </li>
         <li>
-          <a href="#" class="block py-2 px-3 text-black font-bold
+          <a href="{{ route('register-page') }}" class="block py-2 px-3 text-black font-bold
           rounded-sm hover:bg-gray-100 md:hover:bg-transparent
            md:border-0 md:hover:text-blue-700
            md:p-0 dark:text-white
