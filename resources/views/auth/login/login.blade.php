@@ -24,27 +24,33 @@
 
 </div>
 
-  <form action="" method="POST" class="space-y-4">
+  <form action="{{ route('login.proses') }}" method="POST" class="space-y-4">
+    @csrf
     <div>
       <label class="block mb-1 text-sm font-medium text-gray-700 text-left" for="email">Email</label>
       <input
         type="email"
         name="email"
         id="email"
-        class="w-full border border-gray-300 rounded px-3 py-2"
-        required
+        value="{{ old('email') }}"
+        class="@error('email') is-invalid @enderror w-full border border-gray-300 rounded px-3 py-2"
       />
     </div>
-
+         @error('email')
+              <div class=" text-left text-red-600 mt-0">{{ $message }}</div>
+            @enderror
     <div>
       <label class="block mb-1 text-sm font-medium text-gray-700 text-left" for="password">Password</label>
       <input
         type="password"
         name="password"
         id="password"
-        class="w-full border border-gray-300 rounded px-3 py-2"
-        required
+        class="@error('password') is-invalid @enderror w-full border border-gray-300 rounded px-3 py-2"
       />
+
+       @error('password')
+              <div class="text-left text-red-600">{{ $message }}</div>
+            @enderror
     </div>
 
     <button

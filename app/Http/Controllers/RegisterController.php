@@ -43,6 +43,5 @@ class RegisterController extends Controller
            $user->save();
 
          return redirect()->route('login-page');
-
     }
 }

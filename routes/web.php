@@ -10,6 +10,7 @@ Route::get('/', function () {
 
 //login
 route::get('login' , [LoginController::class  , 'index'] )->name('login-page');
+route::post('login' , [LoginController::class , 'login'])->name('login.proses');
 //register
 route::get('register' , [RegisterController::class , 'index'])->name('register-page');
 route::post('register'   , [RegisterController::class , 'store'])->name('regis.proses');
