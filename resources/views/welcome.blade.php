@@ -9,8 +9,6 @@
 </head>
 <body>
 
-
-
 <nav class="bg-sky-500 border border-b-double shadow-lg ">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
@@ -22,7 +20,7 @@
     <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
       <ul class="flex flex-row font-medium p-4 space-x-4 ">
         <li>
-          <a href="#" class="block py-2 px-3 text-white bg-black font-bold
+          <a href="{{ route('login-page') }}" class="block py-2 px-3 text-white bg-black font-bold
           rounded-sm md:bg-transparent md:text-blue-700 md:p-0
           md:dark:text-white dark:bg-blue-600 md:dark:bg-transparent"
            aria-current="page">Login</a>
@@ -77,19 +75,12 @@
   </p>
 
 </div>
-
-
-
 </div>
-
-
   </div>
 </div>
 
 
 <footer class="bg-sky-500 shadow-sm m-4 mt-50 p-5 mx-auto m-auto">
-
-
     <div class="w-full mx-auto max-w-screen-xl p-4
     md:flex md:items-center md:justify-between ">
       <span class="text-sm text-teal-400 sm:text-center dark:text-white">© 2025
