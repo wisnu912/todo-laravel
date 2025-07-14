@@ -18,21 +18,20 @@ class LoginController extends Controller
 {
     //ambil nilai dari input
     $credentials = $request->only('email', 'password');
-    
+
 
     //check apakah credentials ada
     if (Auth::attempt($credentials)) {
         $request->session()->regenerate();
 
-        return redirect()->intended('/');
+        return redirect()->intended('dashboard');
     }
 
     //return erorr jika emali dan password tidak sesuai
     return back()->withErrors([
         'email' => 'Email atau password salah.',
-    ])->withInput(); 
+    ])->withInput();
 }
 
 
 }
-    
