@@ -6,7 +6,7 @@
   <title>@yield('title')</title>
   @vite('resources/css/app.css')
 </head>
-<body class="bg-gray-100 min-h-screen">
+<body class="bg-gray-300 min-h-screen">
 
  <!-- SIDEBAR -->
 <aside class="fixed top-0 left-0 h-screen w-64 bg-sky-600 text-white p-6 shadow-xl z-40 flex flex-col justify-between">
