@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
   <div class="text-center mt-20 mb-0 px-4 mx-10">
     <div class="grid grid-cols-2 gap-8 items-center">
 
