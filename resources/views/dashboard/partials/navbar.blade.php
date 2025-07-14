@@ -18,7 +18,7 @@
     <!-- Kanan: Menu + Avatar -->
     <div class="flex items-center space-x-4">
       <a href="#" class="text-sm hover:text-sky-500 transition">Create</a>
-      <a href="#" class="text-sm hover:text-sky-500 transition">Logout</a>
+      <a href="{{ route('logout') }}" class="text-sm hover:text-sky-500 transition">Logout</a>
       <a href="#">
         <img
           src="https://i.pravatar.cc/40"
