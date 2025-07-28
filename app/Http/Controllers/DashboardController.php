@@ -25,4 +25,9 @@ class DashboardController extends Controller
 
     return redirect()->route('login-page');
     }
+
+    public function create()
+    {
+        return  view('Crud.CreateTodo');
+    }
 }

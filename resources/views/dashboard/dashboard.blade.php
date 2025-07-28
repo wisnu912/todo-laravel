@@ -45,7 +45,7 @@
       class="w-full h-full object-cover rounded-lg" />
   </div>
 </div>
-    
+
 
 
 @endsection
