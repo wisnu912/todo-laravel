@@ -24,5 +24,6 @@ Route::middleware([ 'auth.redirect'])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('logout' , [DashboardController::class , 'logout'])->name('logout');
     Route::get('create' , [DashboardController::class , 'create'])->name('create');
+    Route::post('create' , [DashboardController::class , 'store'])->name('store');
 });
 
