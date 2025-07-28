@@ -13,7 +13,7 @@
 
 
   <!-- KONTEN UTAMA -->
-  <div class="ml-64 min-h-screen flex flex-col">
+   <div class="ml-64 min-h-screen flex flex-col">
 
     {{-- NAVBAR --}}
     @include('dashboard.partials.navbar')

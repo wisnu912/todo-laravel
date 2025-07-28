@@ -66,10 +66,11 @@
     Sederhana. Cepat. Efisien.
   </p>
 
-  <button class="bg-blue-600 text-white text-base font-medium py-3 px-6 rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition duration-300">
+  <a href="{{ route('login-page') }}"><button  class="bg-blue-600 text-white text-base font-medium py-3 px-6
+  rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition duration-300 cursor-pointer">
     Mulai Sekarang
   </button>
-
+</a>
   <p class="text-xs text-gray-400">
     Tidak perlu akun. Langsung gunakan.
   </p>

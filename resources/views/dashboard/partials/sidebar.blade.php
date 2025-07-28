@@ -2,19 +2,24 @@
   <div>
     <h2 class="text-2xl font-bold mb-10 tracking-wide">TaskManager</h2>
 
-    <nav>
+
+  <nav>
       <ul class="space-y-4">
         <li>
           <a href="{{ route('dashboard') }}" class="block px-4 py-2 rounded hover:bg-sky-700 transition">
             📋 Dashboard
           </a>
         </li>
+
         <li>
           <a href="{{ route('create') }}" class="block px-4 py-2 rounded hover:bg-sky-700 transition">
             📝 Create Todo
           </a>
         </li>
+
       </ul>
     </nav>
   </div>
+
+
 </aside>
