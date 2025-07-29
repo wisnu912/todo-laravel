@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\planing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -53,5 +54,30 @@ class DashboardController extends Controller
           'implementasi_todo' => 'implementasi melebihi batas karakter',
           'implementasi_todo' => 'tipe tidak sesuai implementasi'
        ]);
+
+
+        $file = $request->file('image');
+        $fileName = $file->hashName();
+        $file->storeAs('img_todo', $fileName, 'public');
+
+        $imagePath = 'img_todo/' . $fileName;
+        $user_id = Auth::id();
+
+      planing::create([
+         'title' => $request->title,
+         'description' => $request->description,
+         'implementasi_todo' => $request->implementasi_todo,
+         'image' => $imagePath,
+         'users_id' => $user_id
+       ]);
+
+
+
+       return redirect()->route('dashboard');
+
+
     }
+
+
+
 }
