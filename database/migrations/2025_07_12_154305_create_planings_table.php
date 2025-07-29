@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string("title");
             $table->text("description");
             $table->enum('status' , ['todo','in_progres'  , 'done'])->default('todo');
-            $table->timestamp('jam');
             $table->foreignId('users_id')->constrained();
+            $table->string('image')->nullable();
+            $table->string('implementasi_todo');
             $table->timestamps();
         });
     }

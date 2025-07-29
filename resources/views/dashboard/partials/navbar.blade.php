@@ -17,7 +17,9 @@
 
     <!-- Kanan: Menu + Avatar -->
     <div class="flex items-center space-x-4">
-      <a href="#" class="text-sm hover:text-sky-500 transition">Create</a>
+        @if(Request::is('dashboard'))
+      <a href="{{ route('create') }}" class="text-sm hover:text-sky-500 transition">Create</a>
+        @endif
       <a href="{{ route('logout') }}" class="text-sm hover:text-sky-500 transition">Logout</a>
       <a href="#">
         <img

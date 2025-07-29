@@ -4,6 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Storage;
+
+Storage::disk('local')->put('example.txt', 'Contents');
+
+route::get('/' , function() {
+   return view('welcome');
+});
 
 // Route untuk login & register (hanya untuk guest)
 Route::middleware(['auth.redirect'])->group(function () {
@@ -18,6 +25,15 @@ Route::middleware(['auth.redirect'])->group(function () {
 
 Route::middleware([ 'auth.redirect'])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    route::get('logout' , [DashboardController::class , 'logout'])->name('logout');
+    Route::get('logout' , [DashboardController::class , 'logout'])->name('logout');
+    Route::get('create' , [DashboardController::class , 'create'])->name('create');
+    Route::post('create' , [DashboardController::class , 'store'])->name('store');
 });
+
+
+// Route::get('/file' , function() {
+
+
+//         return Storage::download('test.txt');
+// });
 

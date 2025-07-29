@@ -22,7 +22,8 @@
           <button type="button" class="border border-gray-300 rounded-xl bg-white text-gray-800 py-2 hover:bg-gray-100 text-sm md:text-base">Apple</button>
         </div>
 
-        <form action="{{ route('regis.proses') }}" method="POST" class="space-y-5">
+        <form action="{{ route('regis.proses') }}" method="POST"
+         class="space-y-5">
           @csrf
 
           <!-- Username -->
