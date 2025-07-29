@@ -42,12 +42,16 @@ class DashboardController extends Controller
        $request->validate([
            'title' => ['required' , 'string' , 'max:50'],
            'description' => ['required'  , 'max:255'],
-           'image' => ['mimes:png,jpg,jpeg']
+           'image' => ['mimes:png,jpg,jpeg'],
+           'implementasi_todo' => ['required' , 'max:255' , 'string']
        ], [
           'title.required' => 'title wajib di isi',
           'title.string' => 'title hanya boleh string',
           'description.required' => 'description tidak boleh kosong',
           'description.max' => 'description melebihi batas karakter',
+          'implementasi_todo' => 'implementasi tidak boleh kosong',
+          'implementasi_todo' => 'implementasi melebihi batas karakter',
+          'implementasi_todo' => 'tipe tidak sesuai implementasi'
        ]);
     }
 }

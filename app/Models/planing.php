@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class planing extends Model
 {
-    protected $fillable = ['title' , 'description' , 'image' , 'users_id'];
+    protected $fillable = ['title' , 'description' , 'image' , 'users_id' , 'implementasi_todo'];
 }
