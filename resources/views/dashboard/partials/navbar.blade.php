@@ -7,13 +7,17 @@
     </div>
 
     <!-- Tengah: Search kecil -->
-    <div class="flex-1 mx-6">
+    @unless (Request::is('dashboard'))
+      <div class="flex-1 mx-6">
       <input
         type="text"
         placeholder="Cari..."
         class="w-48 px-3 py-1.5 rounded-md text-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-sky-400"
       />
     </div>
+
+    @endunless
+
 
     <!-- Kanan: Menu + Avatar -->
     <div class="flex items-center space-x-4">

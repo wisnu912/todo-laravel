@@ -13,7 +13,9 @@ class DashboardController extends Controller
    // show page  dashboard
     public function index()
     {
-        return view('dashboard.dashboard');
+
+        $data = planing::paginate(2);
+        return view('dashboard.dashboard' , compact('data'));
     }
 
 
@@ -58,9 +60,9 @@ class DashboardController extends Controller
 
         $file = $request->file('image');
         $fileName = $file->hashName();
-        $file->storeAs('img_todo', $fileName, 'public');
+        $file->storeAs('image', $fileName, 'public');
 
-        $imagePath = 'img_todo/' . $fileName;
+        $imagePath = 'image/' . $fileName;
         $user_id = Auth::id();
 
       planing::create([
