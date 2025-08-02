@@ -1,13 +1,15 @@
 <nav class="bg-white text-sky-700 shadow-md">
   <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-
-    <!-- Kiri: Logo / Judul -->
+    
+  <!-- Kiri: Logo / Judul -->
     <div class="flex items-center space-x-4">
       <h1 class="text-xl font-bold">📋 Todolist</h1>
     </div>
 
+      @if (Request::is('dashboard'))
+
     <!-- Tengah: Search kecil -->
-    @unless (Request::is('dashboard'))
+
       <div class="flex-1 mx-6">
       <input
         type="text"
@@ -16,7 +18,7 @@
       />
     </div>
 
-    @endunless
+    @endif
 
 
     <!-- Kanan: Menu + Avatar -->

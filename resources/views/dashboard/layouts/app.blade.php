@@ -8,6 +8,8 @@
 </head>
 <body class="bg-gray-300 min-h-screen">
 
+    @stack('script')
+
  <!-- SIDEBAR -->
  @include('dashboard.partials.sidebar')
 
@@ -26,7 +28,13 @@
     {{-- FOOTER --}}
     @include('dashboard.partials.footer')
 
+
+
+
+
+
   </div>
+
 
 </body>
 </html>
