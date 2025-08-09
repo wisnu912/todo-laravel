@@ -20,12 +20,21 @@
 
     <!-- Info Bar -->
     <div class="flex items-center text-xs text-gray-500 mt-4 gap-4 flex-wrap">
-      <span class="bold text-black text-sm">📅 Dibuat: {{$item->created_at->isoFormat('dddd, D MMM Y')}}</span>
+      <span class="bold text-black text-sm">📅 Dibuat:
+        {{$item->created_at->isoFormat('dddd, D MMM Y')}}
 
-      <div class="ml-auto flex items-center gap-2">
-        <p class="bg-gray-600  text-white text-xs px-3 py-1 rounded-full">
+        <div class="w-30 mt-4 mx-2">
+         <p class="bg-gray-400  text-black bold text-md px-3 py-1 rounded-full">
             Status : {{ $item->status }}
         </p>
+        </div>
+
+
+    </span>
+
+
+      <div class="ml-auto flex items-center gap-2">
+
 
 
 <div class="ml-auto flex items-center gap-2">
@@ -35,7 +44,8 @@
     @csrf
     @method('PUT')
     <select name="status"
-      class="text-xs bg-green-500 text-white px-2 py-1 rounded-full focus:outline-none focus:ring-2 focus:ring-green-300">
+      class="text-xs bg-gray-500 text-white px-2 py-1 rounded-full
+      focus:outline-none">
       <option {{ $item->status == 'Pending' ? 'selected' : '' }} value="Pending">Pending</option>
       <option {{ $item->status == 'In Progress' ? 'selected' : '' }} value="In Progress">In Progress</option>
       <option {{ $item->status == 'Done' ? 'selected' : '' }} value="Done">Done</option>
@@ -43,16 +53,20 @@
   </form>
 </div>
 
-<form onsubmit="return confirm('Yakin ingin menghapus?')" method="POST" action="">
+<form  method="POST" action="">
   @csrf
   @method('DELETE')
 
-  <select class="text-xs bg-gray-200 px-2 py-1 rounded-full">
-    <option selected hidden>⚙️ Options</option>
-    <option value="edit">✏️ Edit</option>
-    <option value="delete">🗑️ Hapus</option>
-  </select>
+
+  <a href="">
+      <button class="bg-red-600  text-white text-xs px-3 py-1 rounded-full">Delete</button>
+  </a>
 </form>
+
+
+  <a href="">
+      <button class="bg-yellow-500  text-white text-xs px-3 py-1 rounded-full">Edit Todo</button>
+  </a>
 
       </div>
     </div>
@@ -69,9 +83,8 @@
 </div>
 
 
-
-
 @endforeach
+
 
 <div  class="mx-10 mt-0">
 {{ $data->links('pagination::tailwind') }}

@@ -31,9 +31,3 @@ Route::middleware([ 'auth.redirect'])->group(function () {
 });
 
 
-// Route::get('/file' , function() {
-
-
-//         return Storage::download('test.txt');
-// });
-
