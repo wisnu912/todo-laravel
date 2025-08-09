@@ -40,16 +40,15 @@
 <div class="ml-auto flex items-center gap-2">
 
   <!-- Dropdown Status -->
-  <form action="" method="POST">
+  <form action="{{ route('update.status' , $item->id  ) }}" method="POST">
     @csrf
     @method('PUT')
-    <select name="status"
-      class="text-xs bg-gray-500 text-white px-2 py-1 rounded-full
-      focus:outline-none">
-      <option {{ $item->status == 'Pending' ? 'selected' : '' }} value="Pending">Pending</option>
-      <option {{ $item->status == 'In Progress' ? 'selected' : '' }} value="In Progress">In Progress</option>
-      <option {{ $item->status == 'Done' ? 'selected' : '' }} value="Done">Done</option>
+    <select name="status" onchange="this.form.submit()"  class="text-xs bg-gray-500 text-white px-2 py-1 rounded-full
+focus:outline-none" >
+      <option {{ $item->status == 'In Progress' ? 'selected' : '' }} value="in_progres">In Progress</option>
+      <option {{ $item->status == 'Done' ? 'selected' : '' }} value="done">Done</option>
     </select>
+        <button type="submit">Update</button>
   </form>
 </div>
 
@@ -89,4 +88,18 @@
 <div  class="mx-10 mt-0">
 {{ $data->links('pagination::tailwind') }}
 </div>
+
+@once
+    @push('script')
+<script>
+    document.querySelectorAll('select[name="status"]').forEach(select => {
+    select.addEventListener('click', function() {
+        if (this.dataset.clicked) {
+            this.form.submit();
+        }
+    });
+});
+</script>
+    @endpush
+@endonce
 @endsection

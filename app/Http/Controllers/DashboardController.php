@@ -73,11 +73,7 @@ class DashboardController extends Controller
          'users_id' => $user_id
        ]);
 
-
-
        return redirect()->route('dashboard');
-
-
     }
 
 
