@@ -77,5 +77,54 @@ class DashboardController extends Controller
     }
 
 
+    public function show($id){
+        $data = planing::findOrFail($id);
+
+        return view('Crud.EditTodo' , compact('data'));
+    }
+
+    public function update(Request $request , $id){
+
+        $request->validate([
+           'title' => ['required' , 'string' , 'max:50'],
+           'description' => ['required'  , 'max:255'],
+           'image' => ['mimes:png,jpg,jpeg'],
+           'implementasi_todo' => ['required' , 'max:255' , 'string']
+       ], [
+          'title.required' => 'title wajib di isi',
+          'title.string' => 'title hanya boleh string',
+          'description.required' => 'description tidak boleh kosong',
+          'implementasi_todo' => 'implementasi tidak boleh kosong',
+          'implementasi_todo' => 'implementasi melebihi batas karakter',
+          'implementasi_todo' => 'tipe tidak sesuai implementasi'
+       ]);
+
+
+
+         $planing = planing::findOrFail($id);
+
+       if($request->file('image')){
+
+        $file = $request->file('image');
+        $fileName = $file->hashName();
+        $file->storeAs('image', $fileName, 'public');
+         $imagePath = 'image/' . $fileName;
+
+        $planing->title = $request->title;
+        $planing->description = $request->description;
+        $planing->implementasi_todo = $request->implementasi_todo;
+        $planing->image =  $imagePath ;
+        $planing->save();
+       }else{
+
+        $planing->title = $request->title;
+        $planing->description = $request->description;
+        $planing->implementasi_todo = $request->implementasi_todo;
+        $planing->save();
+       }
+
+        return redirect()->route('dashboard');
+    }
+
 
 }

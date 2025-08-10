@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UpdateStatusController;
 use Illuminate\Support\Facades\Storage;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Storage::disk('local')->put('example.txt', 'Contents');
 
@@ -31,6 +32,9 @@ Route::middleware([ 'auth.redirect'])->group(function () {
     Route::post('create' , [DashboardController::class , 'store'])->name('store');
     Route::put('update-status/{id}', [UpdateStatusController::class , 'update'])
     ->name('update.status');
+    Route::get('edit-Todo/{id}' , [DashboardController::class  , 'show'])
+    ->name('update.data');
+    Route::put('edit-todo/{id}' , [DashboardController::class , 'update'])->name('proses.update');
 });
 
 

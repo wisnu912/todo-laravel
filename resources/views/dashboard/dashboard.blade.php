@@ -48,7 +48,7 @@ focus:outline-none" >
       <option {{ $item->status == 'In Progress' ? 'selected' : '' }} value="in_progres">In Progress</option>
       <option {{ $item->status == 'Done' ? 'selected' : '' }} value="done">Done</option>
     </select>
-      
+    <button type="submit">update</button>
   </form>
 </div>
 
@@ -63,8 +63,8 @@ focus:outline-none" >
 </form>
 
 
-  <a href="">
-      <button class="bg-yellow-500  text-white text-xs px-3 py-1 rounded-full">Edit Todo</button>
+  <a href="{{ route('update.data' , $item->id) }}">
+      <button class="bg-yellow-500  text-white text-xs px-3 py-1 rounded-full cursor-pointer">Edit Todo</button>
   </a>
 
       </div>
