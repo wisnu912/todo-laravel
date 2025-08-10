@@ -11,7 +11,9 @@
   <!-- Kiri: Konten ToDo -->
   <div class="flex-1">
     <h2 class="text-xl font-bold text-gray-800 hover:underline">
-     {{ $item->title }}
+        <a href="{{ route('detail.todo' , $item->id) }}">
+          {{ $item->title }}
+        </a>
     </h2>
 
     <p class="text-md text-gray-800 mt-1 mx-8 ">

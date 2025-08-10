@@ -77,7 +77,7 @@ class DashboardController extends Controller
     }
 
 
-    public function show($id){
+    public function edit($id){
         $data = planing::findOrFail($id);
 
         return view('Crud.EditTodo' , compact('data'));
@@ -130,8 +130,16 @@ class DashboardController extends Controller
     public function delete($id){
 
      $planing  = planing::findOrFail($id);
-      $planing->delete();
+     $planing->delete();
 
       return redirect()->route('dashboard');
+    }
+
+
+    public function show($id){
+
+        $detail = planing::findOrFail($id);
+        return view('Crud.ShowTodo' , ['detail' => $detail]);
+
     }
 }
