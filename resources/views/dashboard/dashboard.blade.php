@@ -48,7 +48,7 @@ focus:outline-none" >
       <option {{ $item->status == 'In Progress' ? 'selected' : '' }} value="in_progres">In Progress</option>
       <option {{ $item->status == 'Done' ? 'selected' : '' }} value="done">Done</option>
     </select>
-        <button type="submit">Update</button>
+      
   </form>
 </div>
 
