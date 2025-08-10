@@ -32,11 +32,14 @@ Route::middleware([ 'auth.redirect'])->group(function () {
     Route::post('create' , [DashboardController::class , 'store'])->name('store');
     Route::put('update-status/{id}', [UpdateStatusController::class , 'update'])
     ->name('update.status');
-    Route::get('edit-Todo/{id}' , [DashboardController::class  , 'show'])
+    Route::get('edit-Todo/{id}' , [DashboardController::class  , 'edit'])
     ->name('update.data');
     Route::put('edit-todo/{id}' , [DashboardController::class , 'update'])
     ->name('proses.update');
-    Route::delete('delete/{id}' , [DashboardController::class , 'delete'])->name('delete');
+    Route::delete('delete/{id}' , [DashboardController::class , 'delete'])
+    ->name('delete');
+    Route::get('Detail-Todolist/{id}' , [DashboardController::class , 'show'])
+    ->name('detail.todo');
 });
 
 
