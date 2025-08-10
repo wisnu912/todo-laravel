@@ -52,14 +52,13 @@ focus:outline-none" >
   </form>
 </div>
 
-<form  method="POST" action="">
+<form  method="POST" action="{{ route('delete' , $item->id) }}">
   @csrf
   @method('DELETE')
 
 
-  <a href="">
+
       <button class="bg-red-600  text-white text-xs px-3 py-1 rounded-full">Delete</button>
-  </a>
 </form>
 
 

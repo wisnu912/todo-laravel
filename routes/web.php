@@ -34,7 +34,9 @@ Route::middleware([ 'auth.redirect'])->group(function () {
     ->name('update.status');
     Route::get('edit-Todo/{id}' , [DashboardController::class  , 'show'])
     ->name('update.data');
-    Route::put('edit-todo/{id}' , [DashboardController::class , 'update'])->name('proses.update');
+    Route::put('edit-todo/{id}' , [DashboardController::class , 'update'])
+    ->name('proses.update');
+    Route::delete('delete/{id}' , [DashboardController::class , 'delete'])->name('delete');
 });
 
 

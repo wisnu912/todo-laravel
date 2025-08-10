@@ -127,4 +127,13 @@ class DashboardController extends Controller
     }
 
 
+    public function delete($id){
+
+     $planing  = planing::findOrFail($id);
+      $planing->delete();
+
+      return redirect()->route('dashboard');
+    }
+
+
 }
