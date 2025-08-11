@@ -17,16 +17,25 @@
       <img class="h-40 w-full  object-cover rounded-xl" src="{{ asset('storage/' . $detail->image ) }}" alt="">
     </div>
 
-
     </div>
 
         <div class="bg-gray-400 py-2  w-auto p-2 h-20 rounded-lg text-black mt-4 ">
-        {{ $detail->description }}
+
+         {{ $detail->description }}
+
        </div>
 
 
-     <div class="w-auto bg-gray-400 p-2  py-2 mt-4 h-30 mb-10 rounded-lg text-black">
-        {{ $detail->implementasi_todo}}
+     <div class="w-auto bg-gray-400 p-2  py-2 mt-4 h-30 mb-10 rounded-lg text-black ">
+
+        <ol>
+        @foreach (explode("\n" ,$detail->implementasi_todo) as $item )
+           <li>{{$item}}</li>
+        @endforeach
+        </ol>
+
+
+
        </div>
 
      <a href="{{ route('dashboard') }}">
