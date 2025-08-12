@@ -27,12 +27,6 @@
 
     {{-- FOOTER --}}
     @include('dashboard.partials.footer')
-
-
-
-
-
-
   </div>
 
 

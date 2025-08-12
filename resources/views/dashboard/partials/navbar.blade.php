@@ -1,6 +1,6 @@
 <nav class="bg-white text-sky-700 shadow-md">
   <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-    
+
   <!-- Kiri: Logo / Judul -->
     <div class="flex items-center space-x-4">
       <h1 class="text-xl font-bold">📋 Todolist</h1>
@@ -24,10 +24,11 @@
     <!-- Kanan: Menu + Avatar -->
     <div class="flex items-center space-x-4">
         @if(Request::is('dashboard'))
-      <a href="{{ route('create') }}" class="text-sm hover:text-sky-500 transition">Create</a>
+      <a href="{{ route('create') }}"
+       class="text-sm hover:text-sky-500 transition">Create</a>
         @endif
       <a href="{{ route('logout') }}" class="text-sm hover:text-sky-500 transition">Logout</a>
-      <a href="#">
+      <a href="{{ route('profile') }}">
         <img
           src="https://i.pravatar.cc/40"
           alt="Profile"

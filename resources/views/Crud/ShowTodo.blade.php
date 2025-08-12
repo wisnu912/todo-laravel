@@ -20,22 +20,16 @@
     </div>
 
         <div class="bg-gray-400 py-2  w-auto p-2 h-20 rounded-lg text-black mt-4 ">
-
          {{ $detail->description }}
-
        </div>
 
 
      <div class="w-auto bg-gray-400 p-2  py-2 mt-4 h-30 mb-10 rounded-lg text-black ">
-
         <ol>
         @foreach (explode("\n" ,$detail->implementasi_todo) as $item )
            <li>{{$item}}</li>
         @endforeach
         </ol>
-
-
-
        </div>
 
      <a href="{{ route('dashboard') }}">

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UpdateStatusController;
 use Illuminate\Support\Facades\Storage;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -40,6 +41,7 @@ Route::middleware([ 'auth.redirect'])->group(function () {
     ->name('delete');
     Route::get('Detail-Todolist/{id}' , [DashboardController::class , 'show'])
     ->name('detail.todo');
+    Route::get('profile' , [ProfileController::class , 'index'])->name('profile');
 });
 
 
