@@ -14,7 +14,6 @@
     />
 </div>
 
-
         <div class="text-center font-bold mt-4 text-2xl italic ">
         {{ auth()->user()->username }}
         </div>
@@ -48,7 +47,7 @@
       </div>
 
      <div class="text-xl py-2 bg-gray-100 p-2 rounded-md  mt-10 text-gray-800">
-        JUmlah Taks  : {{ $count_todo->planing_count}}
+        JUmlah Todo  : {{ $count_todo->planing_count}}
       </div>
     </div>
 
@@ -56,7 +55,7 @@
    <div class="bg-teal-500 w-full shadow-md rounded-md p-2 py-2 flex items-center align-center">
 
        <div class="mx-6 p-4 text-xl cursor-pointer">
-        Seeting
+       <a href="{{ route('profile.update') }}">Seeting</a>
        </div>
 
          <div class="mx-10 p-4 text-xl cursor-pointer">
@@ -69,7 +68,6 @@
 
     </div>
     </div>
-
 
     </div>
 

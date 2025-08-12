@@ -11,4 +11,8 @@ class ProfileController extends Controller
         $count_todo = User::withCount('planing')->find($id);
         return view('profile.Profile' ,  ['count_todo' => $count_todo]);
     }
+
+    public function edit(){
+         return view('profile.ProfileUpdate');
+    }
 }
