@@ -55,7 +55,7 @@
    <div class="bg-teal-500 w-full shadow-md rounded-md p-2 py-2 flex items-center align-center">
 
        <div class="mx-6 p-4 text-xl cursor-pointer">
-       <a href="{{ route('profile.update') }}">Seeting</a>
+       <a href="{{ route('profile.update' , auth()->user()->id) }}">Seeting</a>
        </div>
 
          <div class="mx-10 p-4 text-xl cursor-pointer">

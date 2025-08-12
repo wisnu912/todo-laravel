@@ -45,6 +45,8 @@ Route::middleware([ 'auth.redirect'])->group(function () {
     ->name('profile');
     Route::get('profile' , [ProfileController::class  , 'edit'])
     ->name('profile.update');
+    Route::put('profile/{id}' , [ProfileController::class , 'update'])
+    ->name('profile.proses');
 });
 
 
