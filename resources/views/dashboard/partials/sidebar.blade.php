@@ -11,12 +11,13 @@
           </a>
         </li>
 
+        @if (Request::is('dashboard'))
         <li>
           <a href="{{ route('create') }}" class="block px-4 py-2 rounded hover:bg-sky-700 transition">
             📝 Create Todo
           </a>
         </li>
-
+        @endif
       </ul>
     </nav>
   </div>

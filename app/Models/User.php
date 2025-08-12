@@ -46,4 +46,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function planing()
+{
+      return $this->hasMany(planing::class  , 'users_id');
+}
 }
