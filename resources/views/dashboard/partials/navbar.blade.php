@@ -2,9 +2,23 @@
   <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
 
   <!-- Kiri: Logo / Judul -->
-    <div class="flex items-center space-x-4">
-      <h1 class="text-xl font-bold">📋 Todolist</h1>
-    </div>
+
+
+            <div class="flex items-center space-x-4">
+            <h1 class="text-xl font-bold">📋 Todolist</h1>
+            </div>
+
+
+{{--
+        @if (Request::is('profile'))
+          <div class="flex items-center space-x-4">
+            <h1 class="text-xl font-bold">📋 My Profile</h1>
+            </div>
+        @endif --}}
+
+
+
+
 
       @if (Request::is('dashboard'))
 

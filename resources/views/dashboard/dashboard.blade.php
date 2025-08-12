@@ -78,7 +78,6 @@ focus:outline-none" >
 <img src="{{ asset('storage/' . $item->image) }}"
      alt="Todo Thumbnail"
      class="w-full h-full object-cover rounded-lg" />
-
   </div>
 </div>
 
