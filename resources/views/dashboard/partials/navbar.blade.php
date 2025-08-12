@@ -28,7 +28,7 @@
        class="text-sm hover:text-sky-500 transition">Create</a>
         @endif
       <a href="{{ route('logout') }}" class="text-sm hover:text-sky-500 transition">Logout</a>
-      <a href="{{ route('profile') }}">
+      <a href="{{ route('profile' , auth()->user()->id) }}">
         <img
           src="https://i.pravatar.cc/40"
           alt="Profile"

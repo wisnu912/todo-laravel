@@ -6,12 +6,17 @@
 
     <div class=" h-[500px]  bg-gray-300 rounded-xl  py-2 p-4 w-auto ">
 
-        <div class="text-md font-bold mx-auto py-2 bg-red-400  w-40 text-center h-40 rounded-[70vw] shadow-xl">
+       <div class="w-40 mx-auto h-40 rounded-full overflow-hidden shadow-xl">
+    <img
+        src="https://i.pravatar.cc/160"
+        alt="Profile"
+        class="w-full h-full object-cover"
+    />
+</div>
 
-        </div>
 
         <div class="text-center font-bold mt-4 text-2xl italic ">
-         cristiano ronaldo
+        {{ auth()->user()->username }}
         </div>
 
 
@@ -35,15 +40,15 @@
 
  <div class="bg-red-400 py-2 p-2 shadow bg-white rounded-md h-72">
     <div class="text-xl py-2 bg-gray-100 p-2 rounded-md mb-4 mt-4 text-gray-800">
-    nama
+      Nama : {{ auth()->user()->username }}
     </div>
 
       <div class="text-xl py-2 p-2 bg-gray-100 rounded-md  mt-8 text-gray-800">
-        Email
+        Email : {{ auth()->user()->email }}
       </div>
 
      <div class="text-xl py-2 bg-gray-100 p-2 rounded-md  mt-10 text-gray-800">
-        Taks Count
+        JUmlah Taks  : {{ $count_todo->planing_count}}
       </div>
     </div>
 

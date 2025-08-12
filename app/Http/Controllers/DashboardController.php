@@ -14,7 +14,7 @@ class DashboardController extends Controller
     public function index()
     {
 
-        $data = planing::paginate(2);
+       $data = planing::where('users_id', Auth::id())->paginate(2);
         return view('dashboard.dashboard' , compact('data'));
     }
 

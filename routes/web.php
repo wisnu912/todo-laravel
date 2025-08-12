@@ -41,7 +41,7 @@ Route::middleware([ 'auth.redirect'])->group(function () {
     ->name('delete');
     Route::get('Detail-Todolist/{id}' , [DashboardController::class , 'show'])
     ->name('detail.todo');
-    Route::get('profile' , [ProfileController::class , 'index'])->name('profile');
+    Route::get('profile/{id}' , [ProfileController::class , 'index'])->name('profile');
 });
 
 
