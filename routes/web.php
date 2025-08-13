@@ -13,7 +13,7 @@ Storage::disk('local')->put('example.txt', 'Contents');
 
 route::get('/' , function() {
    return view('welcome');
-});
+})->name('/');
 
 // Route untuk login & register (hanya untuk guest)
 Route::middleware(['auth.redirect'])->group(function () {
@@ -47,6 +47,8 @@ Route::middleware([ 'auth.redirect'])->group(function () {
     ->name('profile.update');
     Route::put('profile/{id}' , [ProfileController::class , 'update'])
     ->name('profile.proses');
+    Route::delete('delete-Account/{id}' , [ProfileController::class , 'delete'])
+    ->name('delete.akun');
 });
 
 

@@ -58,4 +58,15 @@ class ProfileController extends Controller
 
 
     }
+
+
+    public function delete($id){
+
+        $user = User::findOrFail($id);
+        $user->planing()->delete();
+        $user->delete();
+
+        return redirect()->route('/');
+
+    }
 }

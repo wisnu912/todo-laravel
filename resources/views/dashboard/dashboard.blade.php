@@ -50,13 +50,15 @@ focus:outline-none" >
       <option {{ $item->status == 'In Progress' ? 'selected' : '' }} value="in_progres">In Progress</option>
       <option {{ $item->status == 'Done' ? 'selected' : '' }} value="done">Done</option>
     </select>
-    {{-- <button type="submit">update</button> --}}
+    <button type="submit">update</button>
   </form>
 </div>
 
 <form  method="POST" action="{{ route('delete' , $item->id) }}">
   @csrf
   @method('DELETE')
+
+
 
       <button class="bg-red-600  text-white text-xs px-3 py-1 rounded-full">Delete</button>
 </form>
