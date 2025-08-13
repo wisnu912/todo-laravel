@@ -54,15 +54,27 @@
     <div class="flex align-bottom justify-end h-40  mt-4">
    <div class="bg-teal-500 w-full shadow-md rounded-md p-2 py-2 flex items-center align-center">
 
-       <div class="mx-6 p-4 text-xl cursor-pointer">
+       <div class="mx-6 p-4 text-xl cursor-pointer text-white">
        <a href="{{ route('profile.update' , auth()->user()->id) }}">Seeting</a>
        </div>
 
-         <div class="mx-10 p-4 text-xl cursor-pointer">
-         Delete Akun
-       </div>
+      <form action="{{ route('delete.akun', auth()->user()->id) }}" method="POST" onsubmit="return confirmDelete()">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="mx-10 p-4 text-xl
+    cursor-pointer   w-40  text-white rounded">
+        Delete Akun
+    </button>
+    <script>
+            function confirmDelete() {
+                return confirm('Apakah kamu yakin ingin menghapus akun ini?');
+            }
+</script>
+</form>
 
-         <div class="mx-10 p-4 text-xl cursor-pointer">
+
+
+         <div class="mx-10 p-4 text-xl cursor-pointer text-white">
        Taks Detail
        </div>
 
@@ -72,6 +84,7 @@
     </div>
 
 </div>
+
 
 
 
