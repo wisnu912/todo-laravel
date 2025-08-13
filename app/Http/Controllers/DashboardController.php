@@ -142,4 +142,12 @@ class DashboardController extends Controller
         return view('Crud.ShowTodo' , ['detail' => $detail]);
 
     }
+
+
+    public function DetailTodo(){
+
+
+        $todo = planing::where('users_id' , Auth::id())->get();
+        return view('Crud.TodoDetailUser' , compact('todo'));
+    }
 }

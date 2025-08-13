@@ -49,6 +49,8 @@ Route::middleware([ 'auth.redirect'])->group(function () {
     ->name('profile.proses');
     Route::delete('delete-Account/{id}' , [ProfileController::class , 'delete'])
     ->name('delete.akun');
+    Route::get('TodoUser' , [DashboardController::class , 'DetailTodo'])
+    ->name('todo.user');
 });
 
 

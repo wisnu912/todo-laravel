@@ -72,10 +72,8 @@
 </script>
 </form>
 
-
-
          <div class="mx-10 p-4 text-xl cursor-pointer text-white">
-       Taks Detail
+            <a href="{{ route('todo.user') }}">Todo Detail</a>
        </div>
 
     </div>
