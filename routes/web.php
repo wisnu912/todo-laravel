@@ -51,6 +51,8 @@ Route::middleware([ 'auth.redirect'])->group(function () {
     ->name('delete.akun');
     Route::get('TodoUser' , [DashboardController::class , 'DetailTodo'])
     ->name('todo.user');
+    Route::get('search' , [DashboardController::class ,   'search'])
+    ->name('search.data');
 });
 
 

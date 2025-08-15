@@ -150,4 +150,16 @@ class DashboardController extends Controller
         $todo = planing::where('users_id' , Auth::id())->get();
         return view('Crud.TodoDetailUser' , compact('todo'));
     }
+
+    public function search(Request $request){
+
+        $cari  = $request->cari;
+        $id = Auth::id();
+
+        $data = planing::where('title' , 'like' , "%" . $cari . '%')->paginate(4);
+
+        return view('dashboard.dashboard' , ['data' => $data]);
+
+    }
 }
+

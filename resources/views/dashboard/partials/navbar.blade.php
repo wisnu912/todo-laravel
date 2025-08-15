@@ -9,27 +9,21 @@
             </div>
 
 
-{{--
-        @if (Request::is('profile'))
-          <div class="flex items-center space-x-4">
-            <h1 class="text-xl font-bold">📋 My Profile</h1>
-            </div>
-        @endif --}}
-
-
-
-
-
       @if (Request::is('dashboard'))
 
     <!-- Tengah: Search kecil -->
 
       <div class="flex-1 mx-6">
-      <input
+        <form action="{{ route('search.data') }}" method="get">
+        <input
         type="text"
+        name="cari"
+        value="cari"
         placeholder="Cari..."
         class="w-48 px-3 py-1.5 rounded-md text-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-sky-400"
       />
+        </form>
+
     </div>
 
     @endif
