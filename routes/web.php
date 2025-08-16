@@ -11,12 +11,14 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Storage::disk('local')->put('example.txt', 'Contents');
 
-route::get('/' , function() {
-   return view('welcome');
-})->name('/');
 
 // Route untuk login & register (hanya untuk guest)
 Route::middleware(['auth.redirect'])->group(function () {
+
+    route::get('/' , function() {
+   return view('welcome');
+        })->name('/');
+
     // Login
     Route::get('login', [LoginController::class, 'index'])->name('login-page');
     Route::post('login', [LoginController::class, 'login'])->name('login.proses');

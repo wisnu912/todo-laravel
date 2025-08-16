@@ -10,10 +10,10 @@ class planing extends Model
     'implementasi_todo' , 'status'];
 
 // Model User
-public function users()
-{
-    return $this->hasMany(planing::class, 'users_id');
-}
+        public function users()
+        {
 
+        return $this->belongsTo(User::class);
+        }
 }
 

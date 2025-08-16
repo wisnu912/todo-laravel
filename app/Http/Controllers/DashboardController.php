@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\planing;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -146,17 +147,21 @@ class DashboardController extends Controller
 
     public function DetailTodo(){
 
-
         $todo = planing::where('users_id' , Auth::id())->get();
         return view('Crud.TodoDetailUser' , compact('todo'));
+
     }
 
     public function search(Request $request){
 
         $cari  = $request->cari;
-        $id = Auth::id();
 
-        $data = planing::where('title' , 'like' , "%" . $cari . '%')->paginate(4);
+
+         $data = planing::where('title' , 'like' , "%" . $cari . '%')
+         ->with('users')->where('users_id' , Auth::id())
+         ->paginate(3);
+
+
 
         return view('dashboard.dashboard' , ['data' => $data]);
 
