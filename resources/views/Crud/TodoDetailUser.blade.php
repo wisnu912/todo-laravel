@@ -6,12 +6,29 @@
 <div class="overflow-x-auto">
 
 
+    <div class="flex gap-4">
+        <div>
     <form action="{{ route('cari.data') }}" class="flex mb-6" method="get">
-        <P class="text-lg font-bold">Search</P>
-        <input type="text" name="cari" placeholder="Cari" class="mx-2 w-92 p-2
-        shadow rounded-lg
-        bg-white ">
-    </form>
+            <P class="text-lg font-bold">Search</P>
+            <input type="text" name="cari" placeholder="Cari" class="mx-2 w-92 p-2
+            shadow rounded-lg
+            bg-white ">
+        </form>
+        </div>
+
+        <div>
+         <form action="{{ route('search.date') }}" method="get">
+             <button type="submit">SearchDate</button>
+
+            <input type="date" name="date" class="border rounded-lg shadow-md p-2 px-2
+            bg-white ">
+
+         </form>
+
+        </div>
+
+    </div>
+
   <table class="min-w-full divide-y divide-gray-200 border">
     <thead class="bg-gray-50">
       <tr>
