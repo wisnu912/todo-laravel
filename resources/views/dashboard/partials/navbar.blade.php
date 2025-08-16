@@ -17,8 +17,7 @@
         <form action="{{ route('search.data') }}" method="get">
         <input
         type="text"
-        name="cari"
-        value="cari"
+        name="cari" 
         placeholder="Cari..."
         class="w-48 px-3 py-1.5 rounded-md text-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-sky-400"
       />

@@ -10,10 +10,10 @@ class planing extends Model
     'implementasi_todo' , 'status'];
 
 // Model User
-        public function users()
-        {
+    public function users()
+   {
 
-        return $this->belongsTo(User::class);
-        }
+     return $this->belongsTo(User::class);
+   }
 }
 
