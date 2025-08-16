@@ -1,14 +1,9 @@
 <nav class="bg-white text-sky-700 shadow-md">
   <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
 
-  <!-- Kiri: Logo / Judul -->
-
-
             <div class="flex items-center space-x-4">
             <h1 class="text-xl font-bold">📋 Todolist</h1>
             </div>
-
-
       @if (Request::is('dashboard'))
 
     <!-- Tengah: Search kecil -->
@@ -17,11 +12,10 @@
         <form action="{{ route('search.data') }}" method="get">
         <input
         type="text"
-        name="cari" 
+        name="cari"
         placeholder="Cari..."
         class="w-48 px-3 py-1.5 rounded-md text-sm border border-gray-300 focus:outline-none focus:ring-1 focus:ring-sky-400"
       />
-        </form>
 
     </div>
 
@@ -43,6 +37,5 @@
         />
       </a>
     </div>
-
   </div>
 </nav>

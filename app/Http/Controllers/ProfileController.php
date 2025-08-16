@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\planing;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -53,10 +55,7 @@ class ProfileController extends Controller
             $user->save();
         }
 
-
        return redirect()->route('profile' , $id);
-
-
     }
 
 
@@ -67,6 +66,17 @@ class ProfileController extends Controller
         $user->delete();
 
         return redirect()->route('/');
+    }
+
+
+    public function search(Request $request){
+
+        $cari = $request->cari;
+
+       $todo = planing::where('title' , "like" , "%" . $cari . "%")->with('users')
+       ->where('users_id' , Auth::id())->get();
+
+        return view('Crud.TodoDetailUser' , ['todo' => $todo]);
 
     }
 }

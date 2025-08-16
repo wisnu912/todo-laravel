@@ -4,6 +4,14 @@
 @section('content')
 
 <div class="overflow-x-auto">
+
+
+    <form action="{{ route('cari.data') }}" class="flex mb-6" method="get">
+        <P class="text-lg font-bold">Search</P>
+        <input type="text" name="cari" placeholder="Cari" class="mx-2 w-92 p-2
+        shadow rounded-lg
+        bg-white ">
+    </form>
   <table class="min-w-full divide-y divide-gray-200 border">
     <thead class="bg-gray-50">
       <tr>

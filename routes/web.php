@@ -55,6 +55,8 @@ Route::middleware([ 'auth.redirect'])->group(function () {
     ->name('todo.user');
     Route::get('search' , [DashboardController::class ,   'search'])
     ->name('search.data');
+    Route::get('search-data-user' ,  [ProfileController::class , 'search'])
+    ->name('cari.data');
 });
 
 
