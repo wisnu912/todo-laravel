@@ -57,6 +57,8 @@ Route::middleware([ 'auth.redirect'])->group(function () {
     ->name('search.data');
     Route::get('search-data-user' ,  [ProfileController::class , 'search'])
     ->name('cari.data');
+    Route::get('search-date' , [ProfileController::class , 'searchDate'])
+    ->name('search.date');
 });
 
 

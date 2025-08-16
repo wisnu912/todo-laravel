@@ -71,9 +71,6 @@
     Mulai Sekarang
   </button>
 </a>
-  <p class="text-xs text-gray-400">
-    Tidak perlu akun. Langsung gunakan.
-  </p>
 
 </div>
 </div>
