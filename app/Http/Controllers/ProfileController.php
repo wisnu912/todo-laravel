@@ -73,8 +73,19 @@ class ProfileController extends Controller
 
         $cari = $request->cari;
 
-       $todo = planing::where('title' , "like" , "%" . $cari . "%")->with('users')
-       ->where('users_id' , Auth::id())->get();
+        $todo = planing::where('title' , 'like' , "%" . $cari . "%")->with('users')
+         ->where('users_id' , Auth::id())->get();
+
+         return view('Crud.TodoDetailUser' , ['todo' => $todo]);
+
+    }
+
+    public function searchDate(Request $request){
+
+        $date =  $request->date;
+
+        $todo = planing::where('created_at' , 'like' , "%" . $date . "%")->with('users')
+         ->where('users_id' , Auth::id())->get();
 
         return view('Crud.TodoDetailUser' , ['todo' => $todo]);
     }
