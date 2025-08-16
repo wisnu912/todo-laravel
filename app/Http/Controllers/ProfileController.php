@@ -73,10 +73,10 @@ class ProfileController extends Controller
 
         $cari = $request->cari;
 
-       $todo = planing::where('title' , "like" , "%" . $cari . "%")->with('users')
-       ->where('users_id' , Auth::id())->get();
-
-        return view('Crud.TodoDetailUser' , ['todo' => $todo]);
+        $todo = planing::where('title' , 'like' , "%" . $cari . "%")->with('users')
+         ->where('users_id' , Auth::id())->get();
+         
+         return view('Crud.TodoDetailUser' , ['todo' => $todo]);
 
     }
 }
