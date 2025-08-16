@@ -4,6 +4,7 @@
 @section('content')
 
 <div class=" py-2 bg-white w-full rounded-lg p-2">
+
     <p class="mx-2 mb-2 bold text-md font-bold">
        Detail Todo
     </p>
