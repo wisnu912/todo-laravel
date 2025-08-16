@@ -77,6 +77,5 @@ class ProfileController extends Controller
        ->where('users_id' , Auth::id())->get();
 
         return view('Crud.TodoDetailUser' , ['todo' => $todo]);
-
     }
 }
