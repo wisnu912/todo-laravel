@@ -53,9 +53,13 @@
           </span>
         </td>
         <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
-          <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-md text-sm">
+         <a href="{{ route('detail.todo' ,  $item->id) }}">
+          <button class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1
+          rounded-md text-sm">
+
             Lihat Detail
           </button>
+            </a>
         </td>
       </tr>
 
