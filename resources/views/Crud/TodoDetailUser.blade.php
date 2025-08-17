@@ -16,7 +16,7 @@
         </form>
         </div>
 
-        <div>
+        <div class="flex ">
          <form action="{{ route('search.date') }}" method="get">
              <button type="submit">SearchDate</button>
 
@@ -26,6 +26,10 @@
          </form>
 
         </div>
+
+          <a href="{{ route('todo.user') }}">
+        Reset
+        </a>
 
     </div>
 
